@@ -18,10 +18,4 @@ body {
   margin: 0;
   padding: 0;
   font-family: "AlteHaasGrotesk", sans-serif;
-  width: 100dvw;
-  height: 100dvh;
-  background: black url("/background.png");
-  background-size: cover;
-  background-position: center;
-  color: white;
 }
