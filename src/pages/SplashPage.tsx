@@ -1,12 +1,10 @@
+import DimLayout from "@/layouts/DimLayout";
 import { type FC } from "react";
 
 const SplashPage: FC = () => {
   return (
-    <div
-      className="flex flex-col justify-center items-center w-screen h-screen bg-black text-white text-center bg-cover bg-center"
-      style={{ backgroundImage: `url('/splash-background.png')` }}
-    >
-      <div className="flex flex-col justify-center items-center px-4">
+    <DimLayout background="/splash-background.png">
+      <div className="w-full h-full flex flex-col justify-center items-center px-4">
         <div className="relative mb-[30px]">
           <img
             src="/splash-logo.png"
@@ -24,12 +22,12 @@ const SplashPage: FC = () => {
             className="w-full absolute top-0 left-0"
           />
         </div>
-        <p className="text-base tracking-tighter m-0 text-[14px] leading-[13px]">
+        <p className="text-base tracking-tighter m-0 text-[14px] leading-[13px] text-center">
           Feel the vibe we create. <br />
           Be the vibe we feel.
         </p>
       </div>
-    </div>
+    </DimLayout>
   );
 };
 
