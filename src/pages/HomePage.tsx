@@ -7,7 +7,7 @@ const HomePage: FC = () => {
   const navigate = useNavigate();
 
   return (
-    <DimLayout navigationBar={{onHomeButtonClicked: () => navigate("/home")}}>
+    <DimLayout navigationBar={{ onHomeButtonClicked: () => navigate("/home") }}>
       <div className="flex flex-row h-full">
         <div className="h-full flex-1 flex flex-col justify-center items-center">
           <Carousel images={["/image1.png", "/image2.png", "/image3.png"]}/>
@@ -34,7 +34,7 @@ const HomePage: FC = () => {
                   "욥욥과 페스티벌 안에서 기념 사진을 찍을 수 있습니다.",
                 onClick: () => navigate("/photo-with-yupyup"),
               },
-            ].map(({image, title, description, onClick}, i) => {
+            ].map(({ image, title, description, onClick }, i) => {
               return (
                 <div
                   key={`button-${i}`}

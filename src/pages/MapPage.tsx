@@ -5,17 +5,17 @@ import { useNavigate } from "react-router";
 const mapOptions: {
   name: string;
 }[] = [
-  {name: "화장실"},
-  {name: "물품보관함"},
-  {name: "F&B"},
-  {name: "안내소"},
-  {name: "메인 무대"},
-  {name: "셔틀 승하차"},
-  {name: "흡연부스"},
-  {name: "굿즈부스"},
-  {name: "응급실"},
-  {name: "게이트"},
-  {name: "입장 대기줄"},
+  { name: "화장실" },
+  { name: "물품보관함" },
+  { name: "F&B" },
+  { name: "안내소" },
+  { name: "메인 무대" },
+  { name: "셔틀 승하차" },
+  { name: "흡연부스" },
+  { name: "굿즈부스" },
+  { name: "응급실" },
+  { name: "게이트" },
+  { name: "입장 대기줄" },
 ];
 
 const MapPage: FC = () => {
@@ -54,7 +54,7 @@ const MapPage: FC = () => {
           <div className="w-full px-[30px] flex flex-col gap-[20px]">
             <span className="text-[#C4C4C4] text-[16px]">주요 카테고리</span>
             <div className="group max-w-full flex flex-row flex-wrap gap-[6.5px]">
-              {mapOptions.map(({name}) => {
+              {mapOptions.map(({ name }) => {
                 return <button
                   key={`button-${name}`}
                   className="peer rounded-full text-[12px] font-medium h-[24.5px] flex justify-center items-center px-[22px] transition-all duration-200"

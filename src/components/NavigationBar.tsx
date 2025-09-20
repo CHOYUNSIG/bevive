@@ -2,7 +2,7 @@ import type { FC } from "react";
 
 const NavigationBar: FC<{
   onHomeButtonClicked: () => void,
-}> = ({onHomeButtonClicked}) => (
+}> = ({ onHomeButtonClicked }) => (
   <div className="transform-[scale(3)]">
     <svg
       width="117"
@@ -49,7 +49,7 @@ const NavigationBar: FC<{
       />
       <mask
         id="mask0_2486_1856"
-        style={{maskType: "alpha"}}
+        style={{ maskType: "alpha" }}
         maskUnits="userSpaceOnUse"
         x="54"
         y="3"

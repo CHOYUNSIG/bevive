@@ -5,7 +5,7 @@ const DimLayout: FC<{
   background?: ReactNode; navigationBar?: {
     onHomeButtonClicked: () => void,
   }; children?: ReactNode;
-}> = ({background, navigationBar, children}) => {
+}> = ({ background, navigationBar, children }) => {
   return (
     <div className="w-[100dvw] h-[100dvh] relative bg-black text-white">
       <div className="absolute w-full h-full">
