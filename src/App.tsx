@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import MapPage from "@/pages/MapPage";
 
 function App() {
-  const isIdle = useIdle(60 * 1000);
+  const isIdle = useIdle(60 * 1000 * 1000);
   const navigate = useNavigate();
 
   useEffect(() => {

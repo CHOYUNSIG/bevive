@@ -15,6 +15,14 @@
 }
 
 @font-face {
+  font-family: "IDGrotesk";
+  src: url("/IDGrotesk-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
   font-family: 'Pretendard';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
   font-weight: 100;

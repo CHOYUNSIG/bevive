@@ -12,7 +12,7 @@ const SplashPage: FC = () => {
 
   return (
     <DimLayout
-      background={"url('/background-splash.png') no-repeat center/cover"}
+      background={<div className="w-full h-full bg-[url('/background-splash.png')] bg-no-repeat bg-center bg-cover"/>}
     >
       <div
         className="w-full h-full flex flex-col justify-center items-center px-4"
