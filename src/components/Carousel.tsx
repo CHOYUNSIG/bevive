@@ -1,7 +1,7 @@
-import { useState, useRef, type FC } from "react";
+import { type FC, useRef, useState } from "react";
 import { motion, type PanInfo } from "framer-motion";
 
-const Carousel: FC<{ images: string[] }> = ({ images }) => {
+const Carousel: FC<{ images: string[] }> = ({images}) => {
   const [index, setIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -34,9 +34,9 @@ const Carousel: FC<{ images: string[] }> = ({ images }) => {
         animate={{
           rotateY: -index * itemAngle,
         }}
-        transition={{ type: "spring", stiffness: 200, damping: 30 }}
+        transition={{type: "spring", stiffness: 200, damping: 30}}
         drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
+        dragConstraints={{left: 0, right: 0}}
         onDragEnd={onDragEnd}
         dragElastic={0.1}
       >
@@ -52,10 +52,10 @@ const Carousel: FC<{ images: string[] }> = ({ images }) => {
                 opacity:
                   1 /
                   (Math.abs(
-                    i -
+                      i -
                       (((index % images.length) + images.length) %
                         images.length)
-                  ) +
+                    ) +
                     1),
               }}
             >

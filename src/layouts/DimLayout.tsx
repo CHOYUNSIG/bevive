@@ -1,23 +1,21 @@
 import NavigationBar from "@/components/NavigationBar";
-import type { CSSProperties, FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 
 const DimLayout: FC<{
-  background?: CSSProperties["background"];
-  filter?: CSSProperties["filter"];
-  showNavigationBar?: boolean;
-  children?: ReactNode;
-}> = ({ background, filter, showNavigationBar, children }) => {
+  background?: ReactNode; navigationBar?: {
+    onHomeButtonClicked: () => void,
+  }; children?: ReactNode;
+}> = ({background, navigationBar, children}) => {
   return (
     <div className="w-[100dvw] h-[100dvh] relative bg-black text-white">
-      <div
-        className="absolute w-full h-full bg-cover bg-center"
-        style={{ background, filter }}
-      />
-      <div className="absolute w-full h-full bg-[url('/background.png')] bg-cover bg-center" />
+      <div className="absolute w-full h-full">
+        {background}
+      </div>
+      <div className="absolute w-full h-full bg-[url('/background.png')] bg-cover bg-center"/>
       <div className="absolute w-full h-full">{children}</div>
-      {showNavigationBar && (
+      {navigationBar && (
         <div className="fixed bottom-[50px] left-[50%] -translate-x-1/2 mb-6">
-          <NavigationBar />
+          <NavigationBar {...navigationBar} />
         </div>
       )}
     </div>
