@@ -23,14 +23,14 @@ const PhotoWithYupYupPage: FC = () => {
             onClick={() => navigate(-1)}
           >
             <i className="bg-no-repeat bg-[url('/x.png')] bg-contain bg-center w-[20px] h-[20px]"/>
-            <span className="text-[17px] font-medium">취소하기</span>
+            <span className="text-[17px] font-medium mt-[6px]">취소하기</span>
           </button>
           <button
             className="bg-[#F6FC00] rounded-[6px] w-[160px] hover:scale-105 h-[44.5px] flex flex-row justify-center items-center gap-[12px] transition-all"
             onClick={() => { /* ignore */ }}
           >
             <i className="bg-no-repeat bg-[url('/check.png')] bg-contain bg-center w-[20px] h-[20px]"/>
-            <span className="text-[17px] font-medium text-[#020103]">실행하기</span>
+            <span className="text-[17px] font-medium text-[#020103] mt-[6px]">실행하기</span>
           </button>
         </div>
       </div>

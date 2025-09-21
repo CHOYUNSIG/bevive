@@ -11,8 +11,8 @@ import PhotoWithYupYupPage from "@/pages/PhotoWithYupYupPage.tsx";
 import EmergencyReportPage from "@/pages/EmergencyReportPage.tsx";
 
 function App() {
-  const isIdle = useIdle(60 * 1000 * 1000);
   const navigate = useNavigate();
+  const isIdle = useIdle();
 
   useEffect(() => {
     if (isIdle) navigate("/");

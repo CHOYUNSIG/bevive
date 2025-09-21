@@ -46,7 +46,7 @@ const MapPage: FC = () => {
                   onChange={(e) => setSearchWord(e.target.value)}
                 />
               </div>
-              <img src="/search.png" className="w-[22.3px] h-[22.3px]" alt="search"/>
+              <img src="/search.svg" className="w-[20px] h-[20px]" alt="search"/>
             </div>
           </div>
           <div className="w-full px-[30px] flex flex-col gap-[20px]">
