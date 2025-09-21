@@ -2,25 +2,31 @@
 
 @font-face {
   font-family: "AlteHaasGrotesk";
-  src: url("/AlteHaasGroteskRegular.ttf") format("truetype");
+  src: url("@/resources/fonts/AlteHaasGroteskRegular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AlteHaasGrotesk";
-  src: url("/AlteHaasGroteskBold.ttf") format("truetype");
+  src: url("@/resources/fonts/AlteHaasGroteskBold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "IDGrotesk";
-  src: url("/IDGrotesk-Regular.ttf") format("truetype");
+  src: url("@/resources/fonts/IDGrotesk-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "DS-DIGI";
+  src: url("@/resources/fonts/DS-DIGI.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'Pretendard';

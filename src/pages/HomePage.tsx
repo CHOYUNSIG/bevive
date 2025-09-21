@@ -2,12 +2,14 @@ import Carousel from "@/components/Carousel";
 import DimLayout from "@/layouts/DimLayout";
 import type { FC } from "react";
 import { useNavigate } from "react-router";
+import useNavigationBar from "@/hooks/useNavigationBar.ts";
 
 const HomePage: FC = () => {
   const navigate = useNavigate();
+  const navigationBar = useNavigationBar();
 
   return (
-    <DimLayout navigationBar={{ onHomeButtonClicked: () => navigate("/home") }}>
+    <DimLayout navigationBar={navigationBar}>
       <div className="flex flex-row h-full">
         <div className="h-full flex-1 flex flex-col justify-center items-center">
           <Carousel images={["/image1.png", "/image2.png", "/image3.png"]}/>

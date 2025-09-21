@@ -1,16 +1,18 @@
 import type { FC } from "react";
 import DimLayout from "@/layouts/DimLayout.tsx";
 import { useNavigate } from "react-router";
+import useNavigationBar from "@/hooks/useNavigationBar.ts";
 
 const CoolingMistPage: FC = () => {
   const navigate = useNavigate();
+  const navigationBar = useNavigationBar();
 
   return (
     <DimLayout
       background={
         <div className="w-full h-full bg-[url('/background-cooling-mist.png')] bg-no-repeat bg-center bg-cover"/>
       }
-      navigationBar={{ onHomeButtonClicked: () => navigate("/home") }}
+      navigationBar={navigationBar}
     >
       <div className="w-full h-full flex flex-col justify-center items-center gap-[60px]">
         <div className="flex flex-col items-center gap-[20px] text-center">

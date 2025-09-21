@@ -1,11 +1,13 @@
 import type { FC } from "react";
 import DimLayout from "@/layouts/DimLayout.tsx";
 import { useNavigate } from "react-router";
+import useNavigationBar from "@/hooks/useNavigationBar.ts";
 
 const PhotoWithYupYupPage: FC = () => {
   const navigate = useNavigate();
+  const navigationBar = useNavigationBar();
 
-  return <DimLayout navigationBar={{ onHomeButtonClicked: () => navigate("/home") }}>
+  return <DimLayout navigationBar={navigationBar}>
     <div className="w-full h-full flex flex-col justify-center items-center gap-[60px]">
       <div className="flex flex-col items-center gap-[20px] text-center">
         <div className="flex flex-row gap-[20px] text-[#F6FC00] font-medium font-['IDGrotesk'] items-baseline">

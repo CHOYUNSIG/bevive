@@ -8,6 +8,7 @@ import MapPage from "@/pages/MapPage";
 import CoolingMistPage from "@/pages/CoolingMistPage.tsx";
 import CoolingMistWorkingPage from "@/pages/CoolingMistWorkingPage.tsx";
 import PhotoWithYupYupPage from "@/pages/PhotoWithYupYupPage.tsx";
+import EmergencyReportPage from "@/pages/EmergencyReportPage.tsx";
 
 function App() {
   const isIdle = useIdle(60 * 1000 * 1000);
@@ -25,6 +26,7 @@ function App() {
       <Route path="/cooling-mist" element={<CoolingMistPage/>}/>
       <Route path="/cooling-mist/working" element={<CoolingMistWorkingPage/>}/>
       <Route path="/photo-with-yupyup" element={<PhotoWithYupYupPage/>}/>
+      <Route path="/emergency-report" element={<EmergencyReportPage/>}/>
     </Routes>
   );
 }

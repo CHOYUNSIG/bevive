@@ -1,6 +1,6 @@
 import DimLayout from "@/layouts/DimLayout";
 import { type FC, useState } from "react";
-import { useNavigate } from "react-router";
+import useNavigationBar from "@/hooks/useNavigationBar.ts";
 
 const mapOptions: {
   name: string;
@@ -19,7 +19,7 @@ const mapOptions: {
 ];
 
 const MapPage: FC = () => {
-  const navigate = useNavigate();
+  const navigationBar = useNavigationBar();
   const [searchWord, setSearchWord] = useState("");
 
   return (
@@ -29,9 +29,7 @@ const MapPage: FC = () => {
           <div className="w-[308.62px] h-full bg-black"/>
         </div>
       }
-      navigationBar={{
-        onHomeButtonClicked: () => navigate("/home")
-      }}
+      navigationBar={navigationBar}
     >
       <div className="w-full h-full flex flex-row">
         <div className="w-[308.62px] h-full flex flex-col justify-center items-center gap-[50px]">
