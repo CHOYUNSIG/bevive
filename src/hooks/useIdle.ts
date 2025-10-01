@@ -1,12 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 
-const useIdle = (
-  timeout = 60 * 1000,  // 단위: ms
-) => {
+const useIdle = ({
+  timeout = 60 * 1000,
+  isEnabled = true,
+}: {
+  timeout?: number;  // 단위: ms
+  isEnabled?: boolean;
+}) => {
   const lastTouchedTime = useRef(Date.now());
   const [isIdle, setIsIdle] = useState(false);
 
   useEffect(() => {
+    if (!isEnabled) {
+      setIsIdle(false);
+      return;
+    }
+
     const handleTouch = () => {
       lastTouchedTime.current = Date.now();
       setIsIdle(false);
@@ -25,7 +34,7 @@ const useIdle = (
       clearInterval(interval);
       document.removeEventListener("click", handleTouch);
     };
-  }, [isIdle, timeout]);
+  }, [isIdle, timeout, isEnabled]);
 
   return isIdle;
 };

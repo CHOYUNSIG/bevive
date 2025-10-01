@@ -61,7 +61,7 @@ const SplashPage: FC = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 2, delay: 1 }}
       >
-        <p>Tap</p>
+        <p>Tab</p>
       </motion.div>
     </DimLayout>
   );

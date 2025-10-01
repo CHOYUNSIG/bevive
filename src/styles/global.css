@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import "tailwindcss";
 
 @font-face {
   font-family: "AlteHaasGrotesk";
@@ -23,8 +23,8 @@
 }
 
 @font-face {
-  font-family: "DS-DIGI";
-  src: url("@/resources/fonts/DS-DIGI.TTF") format("truetype");
+  font-family: "Pirulen";
+  src: url("@/resources/fonts/Pirulen.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }

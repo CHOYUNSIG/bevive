@@ -41,12 +41,13 @@ const MapPage: FC = () => {
               <div className="px-2">
                 <input
                   type="text"
-                  className="w-full"
+                  className="w-full focus:outline-none placeholder:text-[14px] text-[16px]"
                   value={searchWord}
                   onChange={(e) => setSearchWord(e.target.value)}
+                  placeholder="화장실 버튼을 눌러 검색해보세요!"
                 />
               </div>
-              <img src="/search.svg" className="w-[20px] h-[20px]" alt="search"/>
+              <img src="/search.svg" className="w-[20px] h-[20px] mx-[5px]" alt="search"/>
             </div>
           </div>
           <div className="w-full px-[30px] flex flex-col gap-[20px]">
