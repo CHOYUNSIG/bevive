@@ -15,7 +15,7 @@ const CoolingMistWorkingPage: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (countdown < 0) navigate("/home");
+    if (countdown === 0) navigate("/qr");
   }, [countdown, navigate]);
 
   return (
@@ -60,7 +60,7 @@ const CoolingMistWorkingPage: FC = () => {
         </span>
         <div className="flex flex-row gap-2 items-baseline font-normal font-['Pirulen'] text-[47px] text-[#F6FC00]">
           <span className="text-transparent text-[18px]">s</span>
-          {Math.max(0, countdown)}
+          {countdown}
           <span className="text-[18px]">s</span>
         </div>
       </div>

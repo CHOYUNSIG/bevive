@@ -1,6 +1,6 @@
 import useNavigationBar from "@/hooks/useNavigationBar";
 import DimLayout from "@/layouts/DimLayout";
-import { type FC } from "react";
+import type { FC } from "react";
 
 const QrPage: FC = () => {
   const navigationBar = useNavigationBar();

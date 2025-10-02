@@ -4,7 +4,7 @@ const useIdle = ({
   timeout = 60 * 1000,
   isEnabled = true,
 }: {
-  timeout?: number;  // 단위: ms
+  timeout?: number; // 단위: ms
   isEnabled?: boolean;
 }) => {
   const lastTouchedTime = useRef(Date.now());
@@ -35,6 +35,10 @@ const useIdle = ({
       document.removeEventListener("click", handleTouch);
     };
   }, [isIdle, timeout, isEnabled]);
+
+  useEffect(() => {
+    lastTouchedTime.current = Date.now();
+  }, [isEnabled]);
 
   return isIdle;
 };

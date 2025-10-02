@@ -39,7 +39,9 @@ const PhotoWithYupYupPage: FC = () => {
               backgroundClip: "content-box, border-box",
               border: "1px solid transparent",
             }}
-            onClick={() => navigate("/cooling-mist/working", { replace: true })}
+            onClick={() =>
+              navigate("/photo-with-yupyup/working", { replace: true })
+            }
           >
             <i className="bg-no-repeat bg-[url('/check.png')] bg-contain bg-center w-[20px] h-[20px]" />
             <span className="text-[17px] font-medium text-white group-hover:text-[#020103]">

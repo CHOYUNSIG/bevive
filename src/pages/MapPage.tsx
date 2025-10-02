@@ -1,6 +1,7 @@
 import DimLayout from "@/layouts/DimLayout";
 import { type FC, useState } from "react";
 import useNavigationBar from "@/hooks/useNavigationBar.ts";
+import { motion } from "framer-motion";
 
 const mapOptions: {
   name: string;
@@ -26,7 +27,7 @@ const MapPage: FC = () => {
     <DimLayout
       background={
         <div className="w-full h-full bg-[#161616]">
-          <div className="w-[308.62px] h-full bg-black"/>
+          <div className="w-[308.62px] h-full bg-black" />
         </div>
       }
       navigationBar={navigationBar}
@@ -47,30 +48,54 @@ const MapPage: FC = () => {
                   placeholder="화장실 버튼을 눌러 검색해보세요!"
                 />
               </div>
-              <img src="/search.svg" className="w-[20px] h-[20px] mx-[5px]" alt="search"/>
+              <img
+                src="/search.svg"
+                className="w-[20px] h-[20px] mx-[5px]"
+                alt="search"
+              />
             </div>
           </div>
           <div className="w-full px-[30px] flex flex-col gap-[20px]">
             <span className="text-[#C4C4C4] text-[16px]">주요 카테고리</span>
             <div className="group max-w-full flex flex-row flex-wrap gap-[6.5px]">
               {mapOptions.map(({ name }) => {
-                return <button
-                  key={`button-${name}`}
-                  className="peer rounded-full text-[12px] font-medium h-[24.5px] flex justify-center items-center px-[22px] transition-all duration-200"
-                  onClick={() => setSearchWord(name)}
-                  style={{
-                    color: searchWord === name ? "black" : "#AEAEAE",
-                    backgroundColor: searchWord === name ? "#F6FC00" : "#272727",
-                  }}
-                >
-                  {name}
-                </button>;
+                return (
+                  <button
+                    key={`button-${name}`}
+                    className="peer rounded-full text-[12px] font-medium h-[24.5px] flex justify-center items-center px-[22px] transition-all duration-200"
+                    onClick={() => setSearchWord(name)}
+                    style={{
+                      color: searchWord === name ? "black" : "#AEAEAE",
+                      backgroundColor:
+                        searchWord === name ? "#F6FC00" : "#272727",
+                    }}
+                  >
+                    {name}
+                  </button>
+                );
               })}
             </div>
           </div>
         </div>
-        <div className="flex-1 p-20 h-full flex flex-col justify-center">
-          <img src="/map.png" alt="map" className="w-full h-full object-contain"/>
+        <div className="flex-1 h-full flex flex-col justify-center relative">
+          <img
+            src="/map.png"
+            alt="map"
+            className="p-20 w-full h-full object-contain"
+          />
+          {searchWord === "화장실" && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
+                src="/map_route.png"
+                alt="map"
+                className="p-20 top-0 left-0 absolute w-full h-full object-contain"
+              />
+            </motion.div>
+          )}
         </div>
       </div>
     </DimLayout>

@@ -11,13 +11,20 @@ import PhotoWithYupYupPage from "@/pages/PhotoWithYupYupPage.tsx";
 import EmergencyReportPage from "@/pages/EmergencyReportPage.tsx";
 import QrPage from "./pages/QrPage";
 import ErrorPage from "./pages/ErrorPage";
+import YupYupWorkingPage from "./pages/YupYupWorkingPage";
 
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const isIdle = useIdle({
-    isEnabled: location.pathname !== "/home",
-    timeout: 5000000,
+    isEnabled: ![
+      "/",
+      "/map",
+      "/cooling-mist/working",
+      "/photo-with-yupyup/working",
+      "/emergency-report",
+    ].includes(location.pathname),
+    timeout: 5000,
   });
 
   useEffect(() => {
@@ -35,6 +42,10 @@ function App() {
         element={<CoolingMistWorkingPage />}
       />
       <Route path="/photo-with-yupyup" element={<PhotoWithYupYupPage />} />
+      <Route
+        path="/photo-with-yupyup/working"
+        element={<YupYupWorkingPage />}
+      />
       <Route path="/emergency-report" element={<EmergencyReportPage />} />
       <Route path="/qr" element={<QrPage />} />
       <Route path="*" element={<ErrorPage />} />
