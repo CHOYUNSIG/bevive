@@ -61,14 +61,14 @@ const Carousel: FC<{ images: string[] }> = ({ images }) => {
 
   return (
     <div
-      className="flex h-[500px] w-[500px] items-center justify-center overflow-visible"
+      className="flex w-[500px] items-center justify-center overflow-visible"
       style={{
         perspective: "1000px",
       }}
     >
       <motion.div
         ref={carouselRef}
-        className="relative h-[383.2px] w-[306.56px] [transform-style:preserve-3d]"
+        className="relative h-[500px] w-[440px] [transform-style:preserve-3d]"
         animate={{
           rotateY: -index * itemAngle,
         }}
@@ -104,7 +104,7 @@ const Carousel: FC<{ images: string[] }> = ({ images }) => {
               <img
                 src={src}
                 alt={`item ${i}`}
-                className="pointer-events-none h-full w-full object-contain border-[#F6FC00] border-[1.4px] rounded-[20px] drop-shadow-[0_4px_4px_rgba(246,252,0,0.25)]"
+                className="pointer-events-none w-full object-contain border-[#F6FC00] border-[1.4px] rounded-[20px] drop-shadow-[0_4px_4px_rgba(246,252,0,0.25)]"
               />
             </div>
           );
