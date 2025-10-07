@@ -16,7 +16,7 @@ const HomePage: FC = () => {
           <Carousel images={["/image1.png", "/image2.png", "/image3.png"]} />
         </div>
         <div className="h-full flex-1 flex flex-col justify-center items-center">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 pr-[40px]">
             <h1 className="font-['IDGrotesk'] font-medium text-[36px] text-[#F6FC00]">
               Festival Menu
             </h1>

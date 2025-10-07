@@ -21,7 +21,7 @@ const PhotoWithYupYupPage: FC = () => {
       }
       navigationBar={navigationBar}
     >
-      <div className="w-full h-full flex flex-col justify-center items-center gap-[60px]">
+      <div className="w-full h-full flex flex-col justify-center items-center gap-[90px]">
         <div className="flex flex-col items-center gap-[45px] text-center">
           <div className="flex flex-col gap-[15px] text-[#F6FC00] font-medium font-['IDGrotesk'] items-center">
             <h1 className="text-[15px]">Photo with</h1>

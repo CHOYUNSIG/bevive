@@ -20,7 +20,7 @@ const CoolingMistWorkingPage: FC = () => {
 
   return (
     <DimLayout navigationBar={navigationBar}>
-      <div className="w-full h-full flex flex-col gap-[10px] justify-center items-center">
+      <div className="w-full h-full flex flex-col gap-[10px] justify-center items-center pb-[50px]">
         <div className="relative w-[500px] h-[320px]">
           <motion.div
             className="absolute top-0 left-0 w-full"

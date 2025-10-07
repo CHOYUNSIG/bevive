@@ -22,7 +22,7 @@ const CoolingMistPage: FC = () => {
       navigationBar={navigationBar}
     >
       <div className="w-full h-full flex flex-col justify-center items-center gap-[60px]">
-        <div className="flex flex-col items-center gap-[20px] text-center">
+        <div className="flex flex-col items-center gap-[10px] text-center">
           <img src="/dupdup.svg" alt="dupdup" className="w-[85px]" />
           <h1 className="text-[#F6FC00] text-[36px] font-medium font-['IDGrotesk']">
             Cooling Mist

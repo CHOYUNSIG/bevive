@@ -13,7 +13,7 @@ const DimLayout: FC<{
     <div className="w-[100dvw] h-[100dvh] relative bg-black text-white">
       <div className="absolute w-full h-full">{background}</div>
       <div className="absolute w-full h-full bg-[url('/background.png')] bg-cover bg-center" />
-      <div className="absolute w-full h-full">{children}</div>
+      <div className="absolute w-full h-full overflow-clip">{children}</div>
       {navigationBar && (
         <div className="fixed bottom-[20px] left-[50%] -translate-x-1/2 mb-6">
           <NavigationBar {...navigationBar} />
