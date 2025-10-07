@@ -17,31 +17,34 @@ const useIdle = ({
     }
 
     const handleTouch = () => {
-      console.log("yes");
       lastTouchedTime.current = Date.now();
       setIsIdle(false);
     };
 
     const checkIdle = () => {
-      if (Date.now() - lastTouchedTime.current > timeout && !isIdle) {
+      const isTimeout = Date.now() - lastTouchedTime.current > timeout;
+      if (isTimeout && !isIdle) {
         setIsIdle(true);
       }
     };
 
     const interval = setInterval(checkIdle, 1000);
+
     document.addEventListener("click", handleTouch, true);
-    document.addEventListener("pointerenter", handleTouch, true);
     document.addEventListener("pointermove", handleTouch, true);
-    document.addEventListener("pointerup", handleTouch, true);
-    document.addEventListener("pointercancel", handleTouch, true);
+    document.addEventListener("keydown", handleTouch, true);
+    document.addEventListener("scroll", handleTouch, true);
+    document.addEventListener("touchstart", handleTouch, true);
+    document.addEventListener("input", handleTouch, true);
 
     return () => {
       clearInterval(interval);
       document.removeEventListener("click", handleTouch);
-      document.removeEventListener("pointerenter", handleTouch);
       document.removeEventListener("pointermove", handleTouch);
-      document.removeEventListener("pointerup", handleTouch);
-      document.removeEventListener("pointercancel", handleTouch);
+      document.removeEventListener("keydown", handleTouch);
+      document.removeEventListener("scroll", handleTouch);
+      document.removeEventListener("touchstart", handleTouch);
+      document.removeEventListener("input", handleTouch);
     };
   }, [isIdle, timeout, isEnabled]);
 
