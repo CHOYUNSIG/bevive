@@ -65,7 +65,7 @@ const Carousel: FC<{ images: string[] }> = ({ images }) => {
 
   return (
     <div
-      className="flex h-[500px] w-[500px] items-center justify-center overflow-hidden"
+      className="flex h-[500px] w-[500px] items-center justify-center overflow-visible"
       style={{
         perspective: "1000px",
       }}
