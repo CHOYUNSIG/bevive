@@ -1,11 +1,18 @@
-import type { FC } from "react";
+import { useEffect, type FC } from "react";
 import DimLayout from "@/layouts/DimLayout.tsx";
 import { useNavigate } from "react-router";
 import useNavigationBar from "@/hooks/useNavigationBar.ts";
+import useIdle from "@/hooks/useIdle";
 
 const PhotoWithYupYupPage: FC = () => {
   const navigate = useNavigate();
   const navigationBar = useNavigationBar();
+
+  const isIdle = useIdle({ timeout: 5000 });
+
+  useEffect(() => {
+    if (isIdle) navigate(-1);
+  }, [isIdle, navigate]);
 
   return (
     <DimLayout

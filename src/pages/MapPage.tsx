@@ -1,7 +1,9 @@
 import DimLayout from "@/layouts/DimLayout";
-import { type FC, useState } from "react";
+import { type FC, useEffect, useState } from "react";
 import useNavigationBar from "@/hooks/useNavigationBar.ts";
 import { motion } from "framer-motion";
+import useIdle from "@/hooks/useIdle";
+import { useNavigate } from "react-router";
 
 const mapOptions: {
   name: string;
@@ -20,8 +22,15 @@ const mapOptions: {
 ];
 
 const MapPage: FC = () => {
+  const navigate = useNavigate();
   const navigationBar = useNavigationBar();
   const [searchWord, setSearchWord] = useState("");
+
+  const isIdle = useIdle({ timeout: 5000 });
+
+  useEffect(() => {
+    if (isIdle) navigate(-1);
+  }, [isIdle, navigate]);
 
   return (
     <DimLayout

@@ -21,7 +21,7 @@ const NavigationBar: FC<{
         rx="6.75604"
         fill="#141414"
         stroke="#525252"
-        stroke-width="0.316517"
+        strokeWidth="0.316517"
       />
       <rect
         x="33.5134"

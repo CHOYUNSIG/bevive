@@ -1,9 +1,18 @@
+import useIdle from "@/hooks/useIdle";
 import useNavigationBar from "@/hooks/useNavigationBar";
 import DimLayout from "@/layouts/DimLayout";
-import type { FC } from "react";
+import { useEffect, type FC } from "react";
+import { useNavigate } from "react-router";
 
 const QrPage: FC = () => {
+  const navigate = useNavigate();
   const navigationBar = useNavigationBar();
+
+  const isIdle = useIdle({ timeout: 5000 });
+
+  useEffect(() => {
+    if (isIdle) navigate(-1);
+  }, [isIdle, navigate]);
 
   return (
     <DimLayout navigationBar={navigationBar}>

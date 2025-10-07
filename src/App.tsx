@@ -1,9 +1,7 @@
 import SplashPage from "@/pages/SplashPage";
 import "@/styles/global.css";
 import HomePage from "@/pages/HomePage";
-import { Route, Routes, useLocation, useNavigate } from "react-router";
-import useIdle from "@/hooks/useIdle";
-import { useEffect } from "react";
+import { Route, Routes } from "react-router";
 import MapPage from "@/pages/MapPage";
 import CoolingMistPage from "@/pages/CoolingMistPage.tsx";
 import CoolingMistWorkingPage from "@/pages/CoolingMistWorkingPage.tsx";
@@ -14,23 +12,6 @@ import ErrorPage from "./pages/ErrorPage";
 import YupYupWorkingPage from "./pages/YupYupWorkingPage";
 
 function App() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const isIdle = useIdle({
-    isEnabled: ![
-      "/",
-      "/map",
-      "/cooling-mist/working",
-      "/photo-with-yupyup/working",
-      "/emergency-report",
-    ].includes(location.pathname),
-    timeout: 5000,
-  });
-
-  useEffect(() => {
-    if (isIdle) navigate("/");
-  }, [isIdle, navigate]);
-
   return (
     <Routes>
       <Route path="/" element={<SplashPage />} />

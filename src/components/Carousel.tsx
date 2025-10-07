@@ -23,13 +23,13 @@ const Carousel: FC<{ images: string[] }> = ({ images }) => {
 
   return (
     <div
-      ref={carouselRef}
       className="flex h-[500px] w-[500px] items-center justify-center overflow-hidden"
       style={{
         perspective: "1000px",
       }}
     >
       <motion.div
+        ref={carouselRef}
         className="relative h-[383.2px] w-[306.56px] [transform-style:preserve-3d]"
         animate={{
           rotateY: -index * itemAngle,
