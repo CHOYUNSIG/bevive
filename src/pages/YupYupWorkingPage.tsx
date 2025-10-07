@@ -22,7 +22,7 @@ const YupYupWorkingPage: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (currentStep > 2) navigate("/qr");
+    if (currentStep > 2) navigate("/qr", { replace: true });
   }, [currentStep, navigate]);
 
   return (

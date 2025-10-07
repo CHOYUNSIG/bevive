@@ -1,13 +1,20 @@
 import Carousel from "@/components/Carousel";
 import DimLayout from "@/layouts/DimLayout";
-import { useState, type FC } from "react";
+import { useEffect, useState, type FC } from "react";
 import { useNavigate } from "react-router";
 import useNavigationBar from "@/hooks/useNavigationBar.ts";
+import useIdle from "@/hooks/useIdle";
 
 const HomePage: FC = () => {
   const navigate = useNavigate();
   const navigationBar = useNavigationBar();
+
   const [index, setIndex] = useState<number>();
+  const isIdle = useIdle({ timeout: 10 * 1000 });
+
+  useEffect(() => {
+    if (isIdle) navigate(-1);
+  }, [isIdle, navigate]);
 
   return (
     <DimLayout navigationBar={navigationBar}>
@@ -30,7 +37,7 @@ const HomePage: FC = () => {
                     if (index !== undefined) return;
                     setIndex(0);
                     setTimeout(() => navigate("/map"), 300);
-                  }
+                  },
                 },
                 {
                   image: "/home_mist.svg",
@@ -40,18 +47,17 @@ const HomePage: FC = () => {
                     if (index !== undefined) return;
                     setIndex(1);
                     setTimeout(() => navigate("/cooling-mist"), 300);
-                  }
+                  },
                 },
                 {
                   image: "/home_camera.svg",
                   title: "Photo with YUPYUP!",
-                  description:
-                    "YupYup과 기념 사진을 찍어보세요!",
+                  description: "YupYup과 기념 사진을 찍어보세요!",
                   onClick: () => {
                     if (index !== undefined) return;
                     setIndex(2);
                     setTimeout(() => navigate("/photo-with-yupyup"), 300);
-                  }
+                  },
                 },
               ].map(({ image, title, description, onClick }, i) => {
                 return (
@@ -69,7 +75,10 @@ const HomePage: FC = () => {
                       src={image}
                       alt={`button-${i}`}
                       style={{
-                        filter: index === i ? "brightness(0%) saturate(0%)" : undefined
+                        filter:
+                          index === i
+                            ? "brightness(0%) saturate(0%)"
+                            : undefined,
                       }}
                     />
                     <div>

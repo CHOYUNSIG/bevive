@@ -11,7 +11,7 @@ const QrPage: FC = () => {
   const isIdle = useIdle({ timeout: 5000 });
 
   useEffect(() => {
-    if (isIdle) navigate("/home");
+    if (isIdle) navigate(-1);
   }, [isIdle, navigate]);
 
   return (

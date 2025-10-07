@@ -15,7 +15,7 @@ const CoolingMistWorkingPage: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (countdown === 0) navigate("/qr");
+    if (countdown === 0) navigate("/qr", { replace: true });
   }, [countdown, navigate]);
 
   return (

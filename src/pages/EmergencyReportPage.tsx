@@ -4,6 +4,7 @@ import useNavigationBar from "@/hooks/useNavigationBar.ts";
 import BackdropModal from "@/components/BackdropModal";
 import ProgressiveStatusBar from "@/components/ProgressiveStatusBar";
 import { useNavigate } from "react-router";
+import useIdle from "@/hooks/useIdle";
 
 const highlightedIndex = 2;
 
@@ -15,6 +16,8 @@ const EmergencyReportPage: FC = () => {
   const [isCountdownStarted, setIsCountdownStarted] = useState(false);
   const [countdown, setCountdown] = useState(10);
   const [currentStep, setCurrentStep] = useState(0);
+
+  const isIdle = useIdle({ timeout: 5000 });
 
   useEffect(() => {
     if (selectedButtonIndex === highlightedIndex) {
@@ -37,8 +40,12 @@ const EmergencyReportPage: FC = () => {
 
   useEffect(() => {
     setCurrentStep(Math.round(2 - (countdown * 2) / 10));
-    if (countdown === 0) navigate("/qr");
+    if (countdown === 0) navigate("/qr", { replace: true });
   }, [countdown, navigate]);
+
+  useEffect(() => {
+    if (isIdle && selectedButtonIndex !== 2) navigate(-1);
+  }, [isIdle, selectedButtonIndex, navigate]);
 
   return (
     <DimLayout navigationBar={navigationBar}>

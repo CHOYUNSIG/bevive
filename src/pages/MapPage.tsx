@@ -29,7 +29,7 @@ const MapPage: FC = () => {
   const isIdle = useIdle({ timeout: 5000 });
 
   useEffect(() => {
-    if (isIdle) navigate(-1);
+    if (isIdle) navigate("/qr", { replace: true });
   }, [isIdle, navigate]);
 
   return (
