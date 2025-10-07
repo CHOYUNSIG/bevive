@@ -29,8 +29,11 @@ const MapPage: FC = () => {
   const isIdle = useIdle({ timeout: 5000 });
 
   useEffect(() => {
-    if (isIdle) navigate("/qr", { replace: true });
-  }, [isIdle, navigate]);
+    if (isIdle) {
+      if (searchWord === "화장실") navigate( "/qr", { replace: true});
+      else navigate(-1);
+    }
+  }, [isIdle, searchWord, navigate]);
 
   return (
     <DimLayout
